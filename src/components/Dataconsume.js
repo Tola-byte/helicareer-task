@@ -77,14 +77,14 @@ function Dataconsume() {
               });
             })
             .filter((item) =>{
-                if(filterByStatus){
-                    return item.status === filterByStatus;
-                }
-                else if ( filterByType){
-                    return item.type === filterByType;
-                }
-                else if ( filterByStatus && filterByType){
+               if ( filterByStatus && filterByType){
                     return item.type === filterByType && item.status === filterByStatus;
+                } 
+                else if(filterByStatus){
+                  return item.status === filterByStatus;
+                }
+                else if (filterByType){
+                  return item.type === filterByType;
                 }
                 else return item;
             })
